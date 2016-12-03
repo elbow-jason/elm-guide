@@ -1,6 +1,6 @@
 # Examples From The Elm Guide
 
-I am recreating these examples (often a copy and paste) from the guide for Elm.
+I am recreating these examples (often a copy and paste) from [the guide for Elm](https://guide.elm-lang.org/).
 
 While my experience coding Elm has so far been fun, following the examples has
 been particularly painful as a beginner. Trying to figure out which module
