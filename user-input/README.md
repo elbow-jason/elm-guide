@@ -197,4 +197,49 @@ If you are familiar with the JavaScript library Redux you may notice direct simi
 
 # The `View`
 
-The view is the last part.
+```elm
+-- VIEW
+view : Model -> Html.Html Msg
+view model =
+  Html.div []
+    [ Html.input [ Attributes.placeholder "Text to reverse", Events.onInput Change ] []
+    , Html.div [] [ Html.text (String.reverse model.content) ]
+    ]
+```
+
+The view is the compositions of functions from the `Html` module of Elm that defines the markup, contents, behavior, and/or styles to the DOM of the browser.
+
+There is a lot going on here.
+
+###### View Declaration
+
+```elm
+view : Model -> Html.Html Msg
+```
+This is the definition of the view. It reads "Declare a `view` that takes a `Model` and returns an `Html.Html` type that wraps a `Msg` type."
+
+I am not confident that I understand why the `Msg` part of `Html.Html Msg` is significant.
+
+###### View Definition
+
+```elm
+view model =
+  Html.div []
+    [ Html.input [ Attributes.placeholder "Text to reverse", Events.onInput Change ] []
+    , Html.div [] [ Html.text (String.reverse model.content) ]
+    ]
+```
+Equivalent HTML:
+
+```html
+<div>
+  <input type="text" placeholder="Text to reverse" oninput="update()"/>
+  <div>
+    <!-- text goes here -->
+  </div>
+</div>
+```
+
+
+
+# The `main` function described
