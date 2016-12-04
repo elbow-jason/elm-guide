@@ -2,11 +2,8 @@
 
   + [Elm Docs](https://guide.elm-lang.org/architecture/user_input/)
 
-  + [Declaration Wiki](https://en.wikipedia.org/wiki/Declaration_(computer_programming)
-
-  + [Type System Wiki](https://en.wikipedia.org/wiki/Type_system)
-
 # The Code
+
 ```elm
 import Html
 import Html.Attributes as Attributes
@@ -46,7 +43,6 @@ view model =
     [ Html.input [ Attributes.placeholder "Text to reverse", Events.onInput Change ] []
     , Html.div [] [ Html.text (String.reverse model.content) ]
     ]
-
 
 ```
 
@@ -229,17 +225,29 @@ view model =
     , Html.div [] [ Html.text (String.reverse model.content) ]
     ]
 ```
+<describe the type signature of `Html` functions  - arg1 is list of attrs and arg2 is list of children/content>
+
+<describe interaction between `Events.onInput` and `Change`>
+
+<describe html text> 
+
 Equivalent HTML:
 
 ```html
 <div>
-  <input type="text" placeholder="Text to reverse" oninput="update()"/>
-  <div>
-    <!-- text goes here -->
-  </div>
+  <input placeholder="Text to reverse"/>
+  <div></div>
 </div>
 ```
 
 
 
 # The `main` function described
+
+```elm
+-- MAIN
+main =
+  Html.beginnerProgram { model = model, view = view, update = update }
+```
+
+Knowing what we know about the `model`, `view`, `update` definitions above we can see that the `main` function is used to tie the
